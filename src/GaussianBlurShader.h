@@ -157,9 +157,9 @@ public:
     void update(ofFbo& _buffer, int _passes, int _radius){
         if (pingPong.getWidth() != _buffer.getWidth() ||
             pingPong.getHeight() != _buffer.getHeight() ||
-            pingPong.getInternalFormat() != _buffer.getTextureReference().getTextureData().glTypeInternal) {
+            pingPong.getInternalFormat() != _buffer.getTexture().getTextureData().glInternalFormat) {
             
-            allocate(_buffer.getWidth(),  _buffer.getHeight(), _buffer.getTextureReference().getTextureData().glTypeInternal );
+            allocate(_buffer.getWidth(),  _buffer.getHeight(), _buffer.getTexture().getTextureData().glInternalFormat );
             
         }
         
@@ -171,7 +171,7 @@ public:
             for(int j = 0; j < 2; j++) {
                 pingPong.dst->begin();
                 blurShader[j].begin();
-                blurShader[j].setUniformTexture("backbuffer", pingPong.src->getTextureReference(), 0 );
+                blurShader[j].setUniformTexture("backbuffer", pingPong.src->getTexture(), 0 );
                 blurShader[j].setUniform1f("radius", _radius);
                 renderFrame(pingPong.getWidth(), pingPong.getHeight());
                 blurShader[j].end();

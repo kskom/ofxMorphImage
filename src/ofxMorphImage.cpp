@@ -54,12 +54,12 @@ void ofxMorphImage::setup(int w, int h, int stepSize = 2, float rescale = 0.5) {
 }
 //---------------------------------------------------------------------------
 void ofxMorphImage::setSource(ofBaseHasTexture &src, ofBaseHasTexture &target) {
-    optFlow.setSource(src.getTextureReference());
-    optFlow.setSource(target.getTextureReference());
+    optFlow.setSource(src.getTexture());
+    optFlow.setSource(target.getTexture());
 }
 //---------------------------------------------------------------------------
 void ofxMorphImage::setSource(ofBaseHasTexture &target) {
-    optFlow.setSource(target.getTextureReference());
+    optFlow.setSource(target.getTexture());
 }
 //---------------------------------------------------------------------------
 void ofxMorphImage::update() {
