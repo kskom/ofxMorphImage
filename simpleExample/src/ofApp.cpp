@@ -5,14 +5,14 @@ void ofApp::setup(){
     
     ofSetVerticalSync(true);
     
-    srcImg.loadImage("kumamoto.jpg");
-    targetImg.loadImage("tokyo.jpg");
+    srcImg.load("kumamoto.jpg");
+    targetImg.load("tokyo.jpg");
     
     /* 
      Setup plane mesh resolution and optical flow resolustion.
      width, height, stepSize, rescale
      */
-    morphImage.setup(srcImg.width, srcImg.height, 2, 0.25);
+    morphImage.setup(srcImg.getWidth(), srcImg.getHeight(), 2, 0.25);
     
     /*
      Set 2 sources for calculate optical flow.

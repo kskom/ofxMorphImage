@@ -57,12 +57,12 @@ void OpticalFlow::setup(int _width, int _height){
     height = _height;
             
     sourceSwapBuffer.allocate(width, height);
-    velocityBuffer.allocate(width, height, GL_RGB32F);
+    velocityBuffer.allocate(width, height, GL_RGBA);
     velocityBuffer.clear();
     
-    velocityTexture.allocate(width, height, GL_RGB32F);
+    velocityTexture.allocate(width, height, GL_RGBA);
     
-    blurBuffer.allocate(width, height, GL_RGB32F);
+    blurBuffer.allocate(width, height, GL_RGBA);
     blurBuffer.clear();
     
     flowVectors = new ofVec2f[int(width * height)];
@@ -91,8 +91,8 @@ void OpticalFlow::update(float _deltaTime) {
     ofEnableBlendMode(OF_BLENDMODE_DISABLED);
     
     opticalFlowShader.update(velocityBuffer,
-                             sourceSwapBuffer.src->getTextureReference(),
-                             sourceSwapBuffer.dst->getTextureReference(),
+                             sourceSwapBuffer.src->getTexture(),
+                             sourceSwapBuffer.dst->getTexture(),
                              //timeStep,
                              strength.get(),
                              offset.get(),

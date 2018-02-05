@@ -14,10 +14,10 @@ public:
     void update(float _deltaTime = 0);
     void setSource(ofTexture& _tex);
     
-    ofTexture&	getTextureReference() {return getOpticalFlow() ;};
-    ofTexture&	getOpticalFlow() {return velocityBuffer.getTextureReference();};
-    ofTexture&	getOpticalFlowDecay() {if(doBlur.get()) return blurBuffer.getTextureReference(); else return velocityBuffer.getTextureReference();
-                                        };
+    ofTexture&	getTexture() {return getOpticalFlow() ;};
+    ofTexture&	getOpticalFlow() {return velocityBuffer.getTexture();};
+    ofTexture&	getOpticalFlowDecay() {if(doBlur.get()) return blurBuffer.getTexture(); else return velocityBuffer.getTexture(); };
+    
     int			getFlowVectorSize(){return width * height;};
     ofVec2f*	getFlowVectors();
     float		getAverageFlow();

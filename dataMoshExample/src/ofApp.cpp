@@ -6,17 +6,21 @@ void ofApp::setup(){
     /*
      apply morph vertex data to another video 
     */
+	cout<<"here\n";
     
     ofSetVerticalSync(true);
+
+        
+    src.load("ink.mov");
+    target.load("amoeba.mov");
     
-    src.loadMovie("ink.mov");
-    target.loadMovie("amoeba.mov");
-    
-    output.loadMovie("test.mov");
+    output.load("test.mov");
     output.play();
     
-    morphImage.setup(src.width, src.height, 2, 0.5);
-    
+    morphImage.setup(src.getWidth(), src.getHeight(), 2, 0.5);
+
+
+        
     morphImage.setSource(src, target);
     morphImage.update();
     
@@ -30,7 +34,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
+
     src.update();
     target.update();
     output.update();
