@@ -6,7 +6,7 @@ http://davis.wpi.edu/~matt/courses/morph/2d.htm
 
 Almost all of the process is in vertex and fragment shader.  
 
-Tested on openFrameworks v0.8.4 / Mac OSX 10.10 / XCode 6.2
+Tested on openFrameworks v0.9,8 / Debian Linux 9
 
 ## Usage
 

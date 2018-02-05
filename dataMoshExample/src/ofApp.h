@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxMorphImage.h"
 
-#define USE_PROGRAMMABLE_GL
+//#define USE_PROGRAMMABLE_GL
 
 class ofApp : public ofBaseApp{
 
