@@ -15,6 +15,6 @@ public:
     void drawIntoMe(ofFbo& _fbo) { scaleIntoMe(_fbo.getTextureReference()); };
     void drawIntoMe(ofTexture& _tex) {  begin(); _tex.draw(0, 0); end(); };
     
-    GLint getInternalFormat() { return getTextureReference().getTextureData().glTypeInternal; };
+    GLint getInternalFormat() { return getTextureReference().getTextureData().glInternalFormat; };
     
 };

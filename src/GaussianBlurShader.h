@@ -157,9 +157,9 @@ public:
     void update(ofFbo& _buffer, int _passes, int _radius){
         if (pingPong.getWidth() != _buffer.getWidth() ||
             pingPong.getHeight() != _buffer.getHeight() ||
-            pingPong.getInternalFormat() != _buffer.getTextureReference().getTextureData().glTypeInternal) {
+            pingPong.getInternalFormat() != _buffer.getTextureReference().getTextureData().glInternalFormat) {
             
-            allocate(_buffer.getWidth(),  _buffer.getHeight(), _buffer.getTextureReference().getTextureData().glTypeInternal );
+            allocate(_buffer.getWidth(),  _buffer.getHeight(), _buffer.getTextureReference().getTextureData().glInternalFormat );
             
         }
         
