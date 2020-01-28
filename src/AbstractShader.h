@@ -11,7 +11,7 @@ class AbstractShader {
 public:
     AbstractShader() {
         
-        if(ofGetGLProgrammableRenderer())
+        if(ofIsGLProgrammableRenderer())
             isProgrammableRenderer = true;
         else
             isProgrammableRenderer = false;
